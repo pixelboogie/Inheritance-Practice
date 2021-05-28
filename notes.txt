@@ -1,0 +1,63 @@
+
+Practice Inheritance in C#
+
+1st Challenge
+--------------------------------------------------
+
+1. Add a MediaType base class to your program.
+  a) Add a public field named `Title` of type `string`.
+  b) Add a constructor to the MediaType class.
+    * Define a parameter named `title` of type `string`.
+    * Initialize the `Title` field using the `title` parameter.
+
+2. Update your existing media type classes to inherit from the MediaType base class.
+  a) Call the base class' constructor from each of the media type subclasses.
+
+3. Review your media type subclasses and remove any `Title` field definitions from those classes.
+  a) Remove any constructor initialization code related to the removed `Title` fields.
+
+2nd Challenge
+--------------------------------------------------
+
+1. Move the `Loan()` and `Return()` methods and the `Loanee` and `OnLoan` fields from the Album subclass to the MediaType base class.
+
+2. Add a `GetDisplayText()` method to any media type subclass that currently doesn't define that method.
+
+3. To test your changes...
+  a) Ensure that you're instantiating an instance of each of your media type subclasses in the Program.cs `Main()` method.
+  b) Call the `Loan()` and `Return()` methods on each media type subclass instance.
+  c) Call the `GetDisplayText()` method (on each media type subclass instance) after calling the `Loan()` and `Return()` methods.
+
+3rd Challenge
+--------------------------------------------------
+
+1. In the Program.cs file, create a static method named `DetectMediaType()`.
+  a) Define a parameter named `item` that's of type `MediaType`.
+
+2. In the `DetectMediaType()` method body, use a series of conditional statements and the C# `is` operator to identity which particular media type subclass (i.e. Album, Book, Movie, etc.) the `item` parameter is an instance of.
+  a) Once the media type item's subclass type has been determined, output a message to the console that identifies that type.
+  b) For example, if the `item` parameter is of type "Album" and its `Title` field is set to the value "Yellow Submarine", write the message "Yellow Submarine is an album!" to the console.
+
+3. To test your changes, pass each media type subclass instance into a call to the `DetectMediaType()` method.
+
+4th Challenge
+--------------------------------------------------
+
+1. In the MediaType.cs file...
+  a) Throw an exception in the MediaType class constructor if the `title` parameter is set to `null` or an empty string.
+    * Set the exception's message to "A media type must have a title."
+
+2. In the Program.cs file...
+  a) Throw an exception in the `DetectMediaType()` helper method when an unexpected media subtype is encountered.
+    * Set the exception's message to "Unexpected media subtype encountered."
+  b) Wrap the code in the `Main()` method in a `try/catch` statement.
+    * Define a parameter in the `catch` clause in order to get a reference to the caught exception.
+    * Write the exception's `Message` property to the console.
+
+
+
+Running in VS code
+----------------------------
+to start dotnet in terminal: dotnet new console
+it prompted me to add this to the line:  --force
+to compile and run my code in terminal use this command: dotnet run
